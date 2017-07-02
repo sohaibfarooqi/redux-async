@@ -1,0 +1,19 @@
+{
+  "name": "redux-async",
+  "version": "1.0.0",
+  "description": "Async operations using react and redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sohaibfarooqi/redux-async.git"
+  },
+  "author": "Sohaib Farooqi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sohaibfarooqi/redux-async/issues"
+  },
+  "homepage": "https://github.com/sohaibfarooqi/redux-async#readme"
+}
