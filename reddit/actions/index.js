@@ -1,17 +1,29 @@
 import fetch from 'isomorphic-fetch'
 
+/**
+Action Constants. Following actions are permissiable 
+user actions.
+**/
 export const REQUEST_POST = 'REQUEST_POST'
 export const RECEIVE_POST = 'RECEIVE_POST'
 export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
 export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT'
 
-export function selectSubreddit(subreddit){
+/**
+This action is invoked when user select
+a specific subreddit for the list.
+**/
+export cosnt selectSubreddit = subreddit => {
 	return {
 		type: SELECT_SUBREDDIT,
 		subreddit
 	}
 }
 
+/**
+This action is performed when user refresh the
+subreddit list.
+**/
 export const invalidateSubreddit = subreddit => {
 	return {
 		type: INVALIDATE_SUBREDDIT,
@@ -35,6 +47,10 @@ const requestPosts = subreddit => {
 	}
 }
 
+/**
+Invoke Reddit's API to fetch list of posts
+against a subreddit.
+**/
 const fetchPosts = subreddit => {
 	return dispatch => {
 		dispatch(requestPosts(subreddit))
