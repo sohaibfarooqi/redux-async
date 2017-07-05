@@ -7,7 +7,7 @@ import {
   invalidateSubreddit
 } from '../actions'
 import Picker from '../components/picker'
-import Posts from '../components/posts'
+import Posts from '../components/post'
 
 class AsyncApp extends Component{
 	
@@ -70,13 +70,14 @@ class AsyncApp extends Component{
 			)
 	}
 
+}
 
-	AsyncApp.propTypes = {
+AsyncApp.PropTypes = {
 	  selectedSubreddit: PropTypes.string.isRequired,
   	  posts: PropTypes.array.isRequired,
   	  isFetching: PropTypes.bool.isRequired,
       lastUpdated: PropTypes.number,
-      dispatch: PropTypes.func.isRequired
+      dispatch: PropTypes.func.isRequired,
 	}
 
 	function mapStateToProps(state){
@@ -86,8 +87,5 @@ class AsyncApp extends Component{
 
 		return {selectedSubreddit, posts, isFetching, lastUpdated}
 	}
-
-	
-}
 
 export default connect(mapStateToProps)(AsyncApp)

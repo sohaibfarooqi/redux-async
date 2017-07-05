@@ -19,13 +19,12 @@ class Picker extends Component{
 			</span>
 		)		
 	}
+}
 
-
-	Picker.propTypes = {
-  		options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  		value: PropTypes.string.isRequired,
-  		onChange: PropTypes.func.isRequired
-	}
+Picker.propTypes = {
+	options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+	value: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired
 }
 
 export default Picker

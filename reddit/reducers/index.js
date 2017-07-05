@@ -4,7 +4,7 @@ import {
 	INVALID_SUBREDDIT,
 	REQUEST_POSTS,
   	RECEIVE_POSTS
-} from './actions'
+} from '../actions'
 
 function selectedSubreddit(state = 'reactjs', action){
 	switch (action.type) {

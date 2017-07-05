@@ -13,7 +13,7 @@ export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT'
 This action is invoked when user select
 a specific subreddit for the list.
 **/
-export cosnt selectSubreddit = subreddit => {
+export const selectSubreddit = subreddit => {
 	return {
 		type: SELECT_SUBREDDIT,
 		subreddit

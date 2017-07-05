@@ -11,10 +11,10 @@ class Posts extends Component{
       		</ul>
 		)
 	}
+}
 
-	Posts.propTypes = {
-  		posts: PropTypes.array.isRequired
-	}
+Posts.propTypes = {
+  	posts: PropTypes.array.isRequired
 }
 
 
