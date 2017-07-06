@@ -7,9 +7,11 @@ const store = configureStore()
 
 class Root extends Component{
 	render(){
-		<Provider store={store}>
-			<AsyncApp/>
-		</Provider>
+		return(
+			<Provider store={store}>
+				<AsyncApp/>
+			</Provider>
+		)
 	}
 }
 
