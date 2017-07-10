@@ -1,8 +1,14 @@
-const path = require('path');
+var webpack = require('webpack'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    path = require('path');
+
 
 module.exports = {
   
-  entry: __dirname + "/reddit/index.js",
+  entry: [
+    'webpack-hot-middleware/client?reload=true',
+    './reddit/index.js'
+  ],
 
   output: {
     path: path.join(__dirname, "dist"),
@@ -14,12 +20,26 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ["react-hot", "babel-loader"]
+        loaders: ["babel-loader"]
       },
       {
         test: /\.html$/,
         loader: "file?name=[name].[ext]"
       },
     ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
+ ],
+ resolve: {
+    extensions: ['', '.js']
   }
 }
